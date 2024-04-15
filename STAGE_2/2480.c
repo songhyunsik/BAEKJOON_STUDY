@@ -1,5 +1,6 @@
 #include <stdio.h>
-//#include <rand.h>
+#include <stdlib.h>
+#include <time.h>
 
 //같은 눈이 3개가 나오면 10,000원+(같은 눈)×1,000원의 상금을 받게 된다.
 //같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)×100원의 상금을 받게 된다.
@@ -9,10 +10,12 @@
 int main(void)
 {
   int num1, num2, num3, money;
-  
-  num1 = rand() % 6;
-  num2 = rand() % 6;
-  num2 = rand() % 6;
+
+  srand(time(NULL));
+
+  num1 = rand() % 6 + 1;
+  num2 = rand() % 6 + 1;
+  num3 = rand() % 6 + 1;
   
   printf("%d %d %d\n", num1, num2, num3);
   
